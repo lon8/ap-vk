@@ -9,7 +9,7 @@ def get_user_info(vk : vk_api.vk_api, uid_list : list[str]):
         user['profile_link'] = f"https://vk.com/{user['domain']}"
     return users
 
-def vk_kernel():
+def vk_kernel(user_id : str):
     vk_session = vk_api.VkApi(token=ACCESS_TOKEN)
 
     final_data = {}
@@ -17,8 +17,8 @@ def vk_kernel():
     vk = vk_session.get_api()
 
     data = {}
-
-    user_info = vk.users.get(fields='domain,photo_200_orig')[0]
+    
+    user_info = vk.users.get(fields='domain,photo_200_orig', user_ids=f'{user_id}')[0]
     profile_link = f"https://vk.com/{user_info['domain']}"
     avatar_link = user_info['photo_200_orig']
     full_name = f"{user_info['first_name']} {user_info['last_name']}"

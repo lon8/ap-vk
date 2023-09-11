@@ -7,13 +7,11 @@ router = APIRouter()
 # Пример 
 
 # data = {
-#   access_token: # Тут по-хорошему надо шифроваться
-#   vkuserId: # или ID пользователя, или Email
-#   userId: # ID пользователя из нашего сервиса
+#   uid: our id
 # }
 
-@router.get('/get_data') # Тут будет POST метод, потому что будем получать access_token,
+@router.post('/') # Тут будет POST метод, потому что будем получать access_token,
                          #id или email пользователя
-def main_route():
-    result = vk_kernel()
+def main_route(info : dict):
+    result = vk_kernel(info['uid'])
     return result
