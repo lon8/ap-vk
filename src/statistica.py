@@ -95,8 +95,7 @@ def extract_posts_data(raw_posts) -> list:
     for post in raw_posts:
         post_data = {}
         post_data['photos'] = post['media']
-        post_data['text'] = ''  # Текст поста (если есть)
-        # post_data['views_count'] = post.get('view_count', 0)
+        post_data['text'] = post['text']
         post_data['likes_count'] = post.get('likes_count', 0)
         post_data['comments_count'] = post.get('comments_count', 0)
         post_data['reposts_count'] = post.get('reposts_count', 0)  # Опционально
