@@ -68,13 +68,13 @@ def vk_kernel(search_query : str):
         if len(wall_info) == 0 or len(wall_info) < 100:
             break
         
-    wall_info : dict = vk.wall.get(count=8, filter='owner', offset=i, domain=domain)['items']
+    wall_info : dict = vk.wall.get(count=8, filter='owner', domain=domain, extended=True, v=5.131)['items']
     # Списки
     post_id_list : list = [post['id'] for post in wall_info]
     post_reposts_count : list = [post['reposts']['count'] for post in wall_info]
     post_date : list = [post['date'] for post in wall_info]
     post_attachments : list = [post['attachments'] for post in wall_info]
-
+    post_text : list = [post['text'] for post in wall_info]
     
     posts = []
     for postnum, post_id in enumerate(post_id_list, start=0):
@@ -105,6 +105,8 @@ def vk_kernel(search_query : str):
 
         post['likes_count'] = len(post['likers'])
 
+        post['text'] = post_text[postnum]
+        
         attachments = []
 
         for attachment in post_attachments[postnum]:
@@ -112,7 +114,7 @@ def vk_kernel(search_query : str):
                 post_photo = attachment['photo']['sizes'][-1]
                 attachments.append(post_photo)
 
-        post['photos'] = attachments
+        post['media'] = attachments
 
         posts.append(post)
     
