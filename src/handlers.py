@@ -1,3 +1,4 @@
+import asyncio
 import json
 from fastapi import APIRouter
 
@@ -26,4 +27,10 @@ router = APIRouter()
 async def main_route(info : dict):
     # Отправляем задачу на выполнение в Celery
     result = process_task.delay(info)
-    return {"task_id": result.id, "data": result.result}
+    task_result = await get_result(result)
+    return {"task_id": result.id, "data": task_result}
+
+async def get_result(result):
+    while not result.ready():
+        await asyncio.sleep(1)  # Ждем, пока задача не будет завершена
+    return result.result

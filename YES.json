@@ -1,0 +1,314 @@
+{
+    "task_id": "d356ca70-346e-4caf-8560-3416f38610f5",
+    "data": {
+        "search_query": "some_search_query",
+        "data": {
+            "country_stats": {
+                "Россия": 92,
+                "США": 5,
+                "Япония": 2
+            },
+            "city_stats": {
+                "Брянск": 5,
+                "Воронеж": 34,
+                "Белгород": 13,
+                "Орёл": 3,
+                "Москва": 16,
+                "Тула": 3,
+                "Липецк": 11,
+                "Los Angeles": 3,
+                "Tokyo": 3,
+                "Егорьевск": 3,
+                "Рязань": 3,
+                "Санкт-Петербург": 3,
+                "Chicago": 3
+            },
+            "sex_stats": {
+                "Male": 71,
+                "Female": 29
+            },
+            "date": "2023-09-15 21:25:51.785349",
+            "social_network": 1,
+            "posts_count": 18,
+            "followers_count": 235,
+            "follows_count": 59,
+            "likes_count": 760,
+            "comments_count": 2,
+            "views_count": 9573,
+            "highlights_count": 0,
+            "mentions_count": 0,
+            "audience": {
+                "men_percent": 0,
+                "women_percent": 0,
+                "ages": {
+                    "45_54": 20,
+                    "35_44": 12,
+                    "14_18": 16,
+                    "25_34": 8,
+                    "18_24": 44
+                },
+                "countries": [
+                    "Япония",
+                    "США",
+                    "Россия"
+                ],
+                "regions": [
+                    "Chicago",
+                    "Tokyo",
+                    "Los Angeles",
+                    "Орёл",
+                    "Белгород",
+                    "Брянск",
+                    "Тула",
+                    "Липецк",
+                    "Москва",
+                    "Рязань",
+                    "Воронеж",
+                    "Егорьевск",
+                    "Санкт-Петербург"
+                ],
+                "countries_stats": {
+                    "Россия": 92,
+                    "США": 5,
+                    "Япония": 2
+                },
+                "regions_stats": {
+                    "Брянск": 5,
+                    "Воронеж": 34,
+                    "Белгород": 13,
+                    "Орёл": 3,
+                    "Москва": 16,
+                    "Тула": 3,
+                    "Липецк": 11,
+                    "Los Angeles": 3,
+                    "Tokyo": 3,
+                    "Егорьевск": 3,
+                    "Рязань": 3,
+                    "Санкт-Петербург": 3,
+                    "Chicago": 3
+                }
+            },
+            "activity_rating": {
+                "persons": [
+                    {
+                        "icon_url": "https://sun2-20.userapi.com/s/v1/ig2/b5v04S05nAXIgmxR3lZ5mDtwXVGQ2hji7IhOXSl3xoHF3lrhwJu0xmL4yE8R4lG2HNb6DBMuH9PM45Njmq62mfUI.jpg?size=200x200&quality=95&crop=135,79,573,573&ava=1",
+                        "username": "Алина Олийник",
+                        "activity": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-18.userapi.com/s/v1/ig2/Ix26MoSo4MyJKv6Por8BoqFYFz5mcsgCAODlDow5TWfJZK1e9jM_i4MaOEdznBxiCQIn2G2KFNmOxJu_5imHOZT9.jpg?size=200x200&quality=95&crop=159,426,399,399&ava=1",
+                        "username": "Юлия Потапова",
+                        "activity": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-19.userapi.com/s/v1/ig2/0mIRCfK2z8wxarAUW4lbrXPb9o8DdiGdcfZqfy0lV_VLLK28P5VOtWv8Dp-32_iFDpUXFxPwfHiBAnBifkw7nyyY.jpg?size=200x200&quality=95&crop=0,0,736,736&ava=1",
+                        "username": "Артём Касмынин",
+                        "activity": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-19.userapi.com/s/v1/ig2/22KZE3pWpk8VSet8fZPmPWrxkzVPb0EfE0eSYRnk49k0_j5_v5He_1XXnUZ1sdIQTn3gXOoLwRKRPYlzwlGdJTyY.jpg?size=200x200&quality=95&crop=435,127,1122,1122&ava=1",
+                        "username": "Аня Борзакова",
+                        "activity": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-17.userapi.com/s/v1/ig2/itrFLlm6DAFmgjyVeJ_TQrDRznpn_IXYtSxqqdxb9Cr5QtSJkbN-NiiIJj8Y7QUlpGuCygvbpceMuFX9f2EETDAr.jpg?size=200x200&quality=95&crop=366,95,561,561&ava=1",
+                        "username": "Анна Гусева",
+                        "activity": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-21.userapi.com/s/v1/ig2/gIk9qz5dREbt4Rslz9fxpwKMvuPypcAzcEZqHJRx4dSYYbB4EtKSVwveanSu1tryZgfMi3gFJ9wfUypYqeGVy95N.jpg?size=200x200&quality=95&crop=12,489,1908,1908&ava=1",
+                        "username": "Настя Кошарная",
+                        "activity": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-17.userapi.com/s/v1/ig2/m5-FFzeJyUPF__JlwMKipSKE1OsocwRvTk6b-fqLvUZ9hiMSDYH8by6vzF60rFVOcorDnxRgwAKexWWiS_7IEIT1.jpg?size=200x200&quality=95&crop=179,2,957,957&ava=1",
+                        "username": "Вероника Третьякова",
+                        "activity": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-18.userapi.com/s/v1/ig2/0hCxKPGmMbZE4oxc-5BLjThddpoRtVipELzzEaWkptwugj3jGJ8gzt9HRlu-PvyHgYtELb4t5G1oEEXn8LdB5CGS.jpg?size=200x200&quality=95&crop=368,352,1191,1191&ava=1",
+                        "username": "Константин Збаражский",
+                        "activity": 8
+                    },
+                    {
+                        "icon_url": "",
+                        "username": "",
+                        "activity": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-22.userapi.com/s/v1/if1/TVxPa7KRaBF8ZEJr3nGFWohBKbMVBOVhBaAikfaMWjQ2jQya-hiSmbMbEKyXaqwSgbstuA.jpg?size=200x266&quality=96&crop=0,0,960,1280&ava=1",
+                        "username": "Серафима Канатова",
+                        "activity": 7
+                    },
+                    {
+                        "icon_url": "https://sun2-19.userapi.com/s/v1/if1/0uollFqfGQRYX-vl6UgGjPiuNaTnK_fVKd66WM7lWpNgK3eakdEINIUCuOTt_IpL--tVzT8F.jpg?size=200x200&quality=96&crop=1,0,683,683&ava=1",
+                        "username": "Марина Дмитренко",
+                        "activity": 7
+                    },
+                    {
+                        "icon_url": "https://sun2-18.userapi.com/s/v1/ig2/XWBh6aHg7M8jMYzThnMZeOTkhzc7mbP4lcEoDpiP7S93A-KWu41m8VX-pjx6qmmZnF5xMh8fp7GD6zHmyVujR0s9.jpg?size=200x200&quality=95&crop=289,171,1748,1748&ava=1",
+                        "username": "Влад Канатов",
+                        "activity": 0
+                    }
+                ]
+            },
+            "top_likers": {
+                "persons": [
+                    {
+                        "icon_url": "https://sun2-20.userapi.com/s/v1/ig2/b5v04S05nAXIgmxR3lZ5mDtwXVGQ2hji7IhOXSl3xoHF3lrhwJu0xmL4yE8R4lG2HNb6DBMuH9PM45Njmq62mfUI.jpg?size=200x200&quality=95&crop=135,79,573,573&ava=1",
+                        "username": "Алина Олийник",
+                        "likes_count": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-18.userapi.com/s/v1/ig2/Ix26MoSo4MyJKv6Por8BoqFYFz5mcsgCAODlDow5TWfJZK1e9jM_i4MaOEdznBxiCQIn2G2KFNmOxJu_5imHOZT9.jpg?size=200x200&quality=95&crop=159,426,399,399&ava=1",
+                        "username": "Юлия Потапова",
+                        "likes_count": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-19.userapi.com/s/v1/ig2/0mIRCfK2z8wxarAUW4lbrXPb9o8DdiGdcfZqfy0lV_VLLK28P5VOtWv8Dp-32_iFDpUXFxPwfHiBAnBifkw7nyyY.jpg?size=200x200&quality=95&crop=0,0,736,736&ava=1",
+                        "username": "Артём Касмынин",
+                        "likes_count": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-19.userapi.com/s/v1/ig2/22KZE3pWpk8VSet8fZPmPWrxkzVPb0EfE0eSYRnk49k0_j5_v5He_1XXnUZ1sdIQTn3gXOoLwRKRPYlzwlGdJTyY.jpg?size=200x200&quality=95&crop=435,127,1122,1122&ava=1",
+                        "username": "Аня Борзакова",
+                        "likes_count": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-17.userapi.com/s/v1/ig2/itrFLlm6DAFmgjyVeJ_TQrDRznpn_IXYtSxqqdxb9Cr5QtSJkbN-NiiIJj8Y7QUlpGuCygvbpceMuFX9f2EETDAr.jpg?size=200x200&quality=95&crop=366,95,561,561&ava=1",
+                        "username": "Анна Гусева",
+                        "likes_count": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-21.userapi.com/s/v1/ig2/gIk9qz5dREbt4Rslz9fxpwKMvuPypcAzcEZqHJRx4dSYYbB4EtKSVwveanSu1tryZgfMi3gFJ9wfUypYqeGVy95N.jpg?size=200x200&quality=95&crop=12,489,1908,1908&ava=1",
+                        "username": "Настя Кошарная",
+                        "likes_count": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-17.userapi.com/s/v1/ig2/m5-FFzeJyUPF__JlwMKipSKE1OsocwRvTk6b-fqLvUZ9hiMSDYH8by6vzF60rFVOcorDnxRgwAKexWWiS_7IEIT1.jpg?size=200x200&quality=95&crop=179,2,957,957&ava=1",
+                        "username": "Вероника Третьякова",
+                        "likes_count": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-18.userapi.com/s/v1/ig2/0hCxKPGmMbZE4oxc-5BLjThddpoRtVipELzzEaWkptwugj3jGJ8gzt9HRlu-PvyHgYtELb4t5G1oEEXn8LdB5CGS.jpg?size=200x200&quality=95&crop=368,352,1191,1191&ava=1",
+                        "username": "Константин Збаражский",
+                        "likes_count": 8
+                    },
+                    {
+                        "icon_url": "https://sun2-22.userapi.com/s/v1/if1/TVxPa7KRaBF8ZEJr3nGFWohBKbMVBOVhBaAikfaMWjQ2jQya-hiSmbMbEKyXaqwSgbstuA.jpg?size=200x266&quality=96&crop=0,0,960,1280&ava=1",
+                        "username": "Серафима Канатова",
+                        "likes_count": 7
+                    },
+                    {
+                        "icon_url": "https://sun2-19.userapi.com/s/v1/if1/0uollFqfGQRYX-vl6UgGjPiuNaTnK_fVKd66WM7lWpNgK3eakdEINIUCuOTt_IpL--tVzT8F.jpg?size=200x200&quality=96&crop=1,0,683,683&ava=1",
+                        "username": "Марина Дмитренко",
+                        "likes_count": 7
+                    }
+                ]
+            },
+            "top_commentators": {
+                "persons": [
+                    {
+                        "icon_url": "https://sun2-18.userapi.com/s/v1/ig2/XWBh6aHg7M8jMYzThnMZeOTkhzc7mbP4lcEoDpiP7S93A-KWu41m8VX-pjx6qmmZnF5xMh8fp7GD6zHmyVujR0s9.jpg?size=200x200&quality=95&crop=289,171,1748,1748&ava=1",
+                        "username": "Влад Канатов",
+                        "comments_count": 8
+                    }
+                ]
+            },
+            "posts": [
+                {
+                    "data": {
+                        "icon_url": "",
+                        "text": "",
+                        "views_count": 637,
+                        "likes_count": 91,
+                        "comments_count": 0,
+                        "reposts_count": 0,
+                        "date": "2022-07-28 16:43:36"
+                    }
+                },
+                {
+                    "data": {
+                        "icon_url": "",
+                        "text": "",
+                        "views_count": 541,
+                        "likes_count": 61,
+                        "comments_count": 0,
+                        "reposts_count": 0,
+                        "date": "2022-05-18 23:54:14"
+                    }
+                },
+                {
+                    "data": {
+                        "icon_url": "",
+                        "text": "",
+                        "views_count": 1327,
+                        "likes_count": 63,
+                        "comments_count": 0,
+                        "reposts_count": 0,
+                        "date": "2020-06-23 22:58:29"
+                    }
+                },
+                {
+                    "data": {
+                        "icon_url": "",
+                        "text": "",
+                        "views_count": 918,
+                        "likes_count": 69,
+                        "comments_count": 0,
+                        "reposts_count": 0,
+                        "date": "2020-06-09 15:27:12"
+                    }
+                },
+                {
+                    "data": {
+                        "icon_url": "",
+                        "text": "",
+                        "views_count": 739,
+                        "likes_count": 47,
+                        "comments_count": 0,
+                        "reposts_count": 0,
+                        "date": "2020-05-19 01:31:55"
+                    }
+                },
+                {
+                    "data": {
+                        "icon_url": "",
+                        "text": "",
+                        "views_count": 619,
+                        "likes_count": 53,
+                        "comments_count": 0,
+                        "reposts_count": 0,
+                        "date": "2020-04-04 18:52:18"
+                    }
+                },
+                {
+                    "data": {
+                        "icon_url": "",
+                        "text": "",
+                        "views_count": 495,
+                        "likes_count": 37,
+                        "comments_count": 0,
+                        "reposts_count": 0,
+                        "date": "2020-03-16 20:20:54"
+                    }
+                },
+                {
+                    "data": {
+                        "icon_url": "",
+                        "text": "",
+                        "views_count": 519,
+                        "likes_count": 48,
+                        "comments_count": 0,
+                        "reposts_count": 0,
+                        "date": "2020-02-01 15:16:10"
+                    }
+                }
+            ],
+            "profile_link": "https://vk.com/vladkanatik",
+            "avatar_link": "https://sun2-18.userapi.com/s/v1/ig2/XWBh6aHg7M8jMYzThnMZeOTkhzc7mbP4lcEoDpiP7S93A-KWu41m8VX-pjx6qmmZnF5xMh8fp7GD6zHmyVujR0s9.jpg?size=200x200&quality=95&crop=289,171,1748,1748&ava=1",
+            "full_name": "Влад Канатов",
+            "reposts_count": 1
+        }
+    }
+}

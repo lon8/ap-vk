@@ -19,7 +19,7 @@ def process_task(info : dict):
     result = vk_kernel(info['search_query'])
     
     result_stats = calculate_analytics(result, info['user_id'])
-    
+    json_data['search_query'] = info['search_query']
     json_data['data'] = result_stats
     # response = requests.post(f'http://88.218.60.146/api/add_history/{info["social"]}/{info["user_id"]}/', headers=headers, json=json_data)
     
