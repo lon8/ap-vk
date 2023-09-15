@@ -120,16 +120,18 @@ import datetime
 
 from src.statistica import calculate_likes_views_comments_reposts, calculate_top_commentators, extract_additional_data, extract_posts_data, statistics
 
-def calculate_analytics(json_response : dict, uid : int) -> dict:
+def calculate_analytics(json_response_full : dict, uid : int) -> dict:
     total_likes = 0
     total_comments = 0
     total_reposts = 0
     total_views = 0
     
-    friends_data = json_response['data']['friends']
+    json_response = json_response_full['data']
+    
+    friends_data = json_response['friends']
     country_stats, city_stats, sex_stats, unique_countries, unique_cities, age_stats = statistics(friends_data)
     
-    post_data = json_response['data']['posts']
+    post_data = json_response['posts']
     post_data_list = extract_posts_data(post_data)
     
     additional_data = extract_additional_data(json_response)
@@ -155,9 +157,6 @@ def calculate_analytics(json_response : dict, uid : int) -> dict:
     activity_rating_list.sort(key=lambda x: x['activity'], reverse=True)
     
     response_data = {
-        'country_stats': country_stats,
-        'city_stats': city_stats,
-        'sex_stats': sex_stats,
         'date': str(datetime.datetime.now()),
         'social_network': 1,
         'posts_count': 0,
@@ -165,19 +164,7 @@ def calculate_analytics(json_response : dict, uid : int) -> dict:
         'follows_count': 0,
         'likes_count': 0,
         'comments_count': 0,
-        'views_count': 0,  # Опционально
-        'highlights_count': 0,  # Опционально
-        'mentions_count': 0,  # Опционально
-        'audience': 
-        {
-            'men_percent': 0,
-            'women_percent': 0,
-            'ages': age_stats,
-            'countries': unique_countries,  # список городов без повторений
-            'regions': unique_cities, # список стран без повторений
-            'countries_stats': country_stats,
-            'regions_stats': city_stats,
-        },
+        # 'views_count': 0,  # Опционально
         'activity_rating':
         {
             'persons': activity_rating_list

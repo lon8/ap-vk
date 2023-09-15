@@ -74,7 +74,7 @@ def find_index_by_value(array_of_dicts, target_value):
     return -1  # Вернуть -1, если значение не найдено в массиве
 
 def extract_additional_data(data_json) -> dict:
-    additional_data = data_json.get('data', {})
+    additional_data = data_json
     result = {
         'profile_link': additional_data.get('profile_link', ''),
         'avatar_link': additional_data.get('icon_url', ''),
@@ -82,7 +82,6 @@ def extract_additional_data(data_json) -> dict:
         'follows_count': additional_data.get('friends_count', 0),
         'followers_count': additional_data.get('followers_count', 0),
         'posts_count': additional_data.get('total_posts', 0),
-        'views_count': additional_data.get('total_views', 0),
         'likes_count': additional_data.get('total_likes', 0),
         'reposts_count': additional_data.get('total_reposts', 0),
         'comments_count': additional_data.get('total_comments', 0),
@@ -119,9 +118,11 @@ def calculate_likes_views_comments_reposts(posts_data):
     else:
         print("Неподдерживаемый формат данных")
         return []
-
+    
+    all_likers = []
     for post in posts:
         likers = post.get("likers", [])
+        all_likers = all_likers + likers
         for liker in likers:
             likers_counter[liker["domain"]] += 1
 
@@ -129,11 +130,11 @@ def calculate_likes_views_comments_reposts(posts_data):
 
     top_likers_list = []
     for domain, count in top_10_likers:
-        value = find_index_by_value(likers, domain)
+        value = find_index_by_value(all_likers, domain)
         
         top_likers_list.append({
-            'icon_url': likers[value]['icon_url'],  # Здесь должна быть ссылка на аватар пользователя, если есть
-            'username': f"{likers[value]['first_name']} {likers[value]['last_name']}",
+            'icon_url': all_likers[value]['icon_url'],  # Здесь должна быть ссылка на аватар пользователя, если есть
+            'username': f"{all_likers[value]['first_name']} {all_likers[value]['last_name']}",
             'likes_count': count
         })
 
@@ -145,10 +146,11 @@ def calculate_top_commentators(posts_data) -> list:
     commentators_counter = Counter()
 
     # Словарь для хранения информации о комментаторах по их ID
-
+    all_commentators = []
     for post in posts_data:
         for commentator in post.get('commentators', []):
             commentators = post.get("commentators", [])
+            all_commentators = all_commentators + commentators
             for commentator in commentators:
                 commentators_counter[commentator["domain"]] += 1
             
@@ -156,11 +158,11 @@ def calculate_top_commentators(posts_data) -> list:
     
     top_commentators_list = []
     for domain, count in top_10_commentators:
-        value = find_index_by_value(commentators, domain)
+        value = find_index_by_value(all_commentators, domain)
         
         top_commentators_list.append({
-            'icon_url': commentators[value]['photo_200_orig'],
-            'username': f"{commentators[value]['first_name']} {commentators[value]['last_name']}",
+            'icon_url': all_commentators[value]['photo_200_orig'],
+            'username': f"{all_commentators[value]['first_name']} {all_commentators[value]['last_name']}",
             'comments_count': count
         })
 
