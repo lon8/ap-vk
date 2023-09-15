@@ -33,20 +33,35 @@ def vk_kernel(user_id : str):
     data['friends_count'] = friends_count
     data['followers_count'] = followers_count
 
-
-    # Получение информации о стенах пользователя
-    wall_info : dict = vk.wall.get(count=100, filter='owner')['items']
-    total_posts : int = len(wall_info)
-    data['total_posts'] = total_posts
+    total_posts : int = 0
+    total_views : int = 0
+    total_likes : int = 0
+    total_comments : int = 0
+    total_reposts : int = 0
     
-    total_views = sum(post['views']['count'] for post in wall_info)
-    total_likes = sum(post['likes']['count'] for post in wall_info)
-    total_reposts = sum(post['reposts']['count'] for post in wall_info)
-    total_comments = sum(post['comments']['count'] for post in wall_info)
-    data['total_views'] = total_views
-    data['total_likes'] = total_likes
-    data['total_reposts'] = total_reposts
-    data['total_comments'] = total_comments
+    # Получение информации о стенах пользователя
+    for i in range(0, 1000000, 100):
+        wall_info : dict = vk.wall.get(count=100, filter='owner', offset=i)['items']
+        total_posts += len(wall_info)
+        
+        data['total_posts'] = total_posts
+        
+        total_views += sum(post['views']['count'] for post in wall_info)
+        total_likes += sum(post['likes']['count'] for post in wall_info)
+        total_reposts += sum(post['reposts']['count'] for post in wall_info)
+        total_comments += sum(post['comments']['count'] for post in wall_info)
+        if i == 0:
+            data['total_views'] = total_views
+            data['total_likes'] = total_likes
+            data['total_reposts'] = total_reposts
+            data['total_comments'] = total_comments
+        else:
+            data['total_views'] += total_views
+            data['total_likes'] += total_likes
+            data['total_reposts'] += total_reposts
+            data['total_comments'] += total_comments
+        if len(wall_info) == 0 or len(wall_info) < 100:
+            break
 
     # Списки
     post_id_list : list = [post['id'] for post in wall_info]
