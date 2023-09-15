@@ -1,6 +1,6 @@
 import json
 import vk_api
-from config import ACCESS_TOKEN
+from src.config import ACCESS_TOKEN
 import datetime
 
 def get_user_info(vk : vk_api.vk_api, uid_list : list[str]):
