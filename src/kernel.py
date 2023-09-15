@@ -3,10 +3,14 @@ import vk_api
 from src.config import ACCESS_TOKEN
 import datetime
 
+
+
 def get_user_info(vk : vk_api.vk_api, uid_list : list[str]):
     users = vk.users.get(fields='photo_200_orig,domain', user_ids=uid_list)
     for user in users:
         user['profile_link'] = f"https://vk.com/{user['domain']}"
+        user['icon_url'] = user['photo_200_orig']
+        del user['photo_200_orig']
     return users
 
 def vk_kernel(user_id : str):
@@ -24,7 +28,7 @@ def vk_kernel(user_id : str):
     full_name = f"{user_info['first_name']} {user_info['last_name']}"
 
     data['profile_link'] = profile_link
-    data['avatar_link'] = avatar_link
+    data['icon_url'] = avatar_link
     data['full_name'] = full_name
 
     # # Получение количества друзей и подписчиков
@@ -50,6 +54,7 @@ def vk_kernel(user_id : str):
         total_likes += sum(post['likes']['count'] for post in wall_info)
         total_reposts += sum(post['reposts']['count'] for post in wall_info)
         total_comments += sum(post['comments']['count'] for post in wall_info)
+        
         if i == 0:
             data['total_views'] = total_views
             data['total_likes'] = total_likes
@@ -62,7 +67,8 @@ def vk_kernel(user_id : str):
             data['total_comments'] += total_comments
         if len(wall_info) == 0 or len(wall_info) < 100:
             break
-    wall_info : dict = vk.wall.get(count=10, filter='owner', offset=i)['items']
+        
+    wall_info : dict = vk.wall.get(count=8, filter='owner', offset=i)['items']
     # Списки
     post_id_list : list = [post['id'] for post in wall_info]
     post_views_count : list = [post['views']['count'] for post in wall_info]
@@ -90,7 +96,6 @@ def vk_kernel(user_id : str):
             profiles_comments = [profile for profile in comments['profiles']]
         
         post['commentators'] = profiles_comments
-
         
         # Собираем лайки
         likes = vk.wall.getLikes(count=1000, post_id=post_id)
@@ -156,7 +161,8 @@ def vk_kernel(user_id : str):
             friend['country'] = friend_info['country']['title']
         except:
             friend['country'] = ''
-        friend['avatar'] = friend_info['photo_200_orig']
+        friend['icon_url'] = friend_info['photo_200_orig']
+        del friend_info['photo_200_orig']
         try:
             if friend_info['sex'] == 1:
                 friend['sex'] = 'Female'
@@ -175,3 +181,5 @@ def vk_kernel(user_id : str):
         json.dump(final_data, file, indent=4, ensure_ascii=False)
 
     return final_data
+
+    # Statistics
