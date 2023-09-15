@@ -62,7 +62,7 @@ def vk_kernel(user_id : str):
             data['total_comments'] += total_comments
         if len(wall_info) == 0 or len(wall_info) < 100:
             break
-
+    wall_info : dict = vk.wall.get(count=10, filter='owner', offset=i)['items']
     # Списки
     post_id_list : list = [post['id'] for post in wall_info]
     post_views_count : list = [post['views']['count'] for post in wall_info]
