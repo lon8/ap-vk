@@ -167,3 +167,4 @@ def calculate_top_commentators(posts_data) -> list:
         })
 
     return top_commentators_list
+#

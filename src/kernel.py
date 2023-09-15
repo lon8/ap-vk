@@ -182,4 +182,3 @@ def vk_kernel(search_query : str):
 
     return final_data
 
-    # Statistics
