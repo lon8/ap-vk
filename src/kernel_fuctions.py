@@ -1,3 +1,32 @@
+def get_user_info(vk, uid_list):
+    users = vk.users.get(fields='photo_200_orig,domain', user_ids=uid_list)
+    for user in users:
+        user['profile_link'] = f"https://vk.com/{user['domain']}"
+        user['icon_url'] = user['photo_200_orig']
+        del user['photo_200_orig']
+    return users
+
+def get_wall_info(vk, user_id, domain):
+    total_posts, total_likes, total_comments, total_reposts = 0, 0, 0, 0
+
+    for i in range(0, 1000000, 100):
+        wall_info = vk.wall.get(count=100, filter='owner', offset=i, domain=domain)['items']
+        total_posts += len(wall_info)
+
+        total_likes += sum(post['likes']['count'] for post in wall_info)
+        total_reposts += sum(post['reposts']['count'] for post in wall_info)
+        total_comments += sum(post['comments']['count'] for post in wall_info)
+
+        if len(wall_info) == 0 or len(wall_info) < 100:
+            break
+
+    return {
+        'total_posts': total_posts,
+        'total_likes': total_likes,
+        'total_reposts': total_reposts,
+        'total_comments': total_comments
+    }
+
 def get_posts(vk, user_id, post_id_list, post_reposts_count, post_date, post_attachments, post_text):
     posts = []
     for postnum, post_id in enumerate(post_id_list, start=0):
