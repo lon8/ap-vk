@@ -1,12 +1,30 @@
 from collections import Counter
 from datetime import datetime
 
+def process_age(bdate, current_year, age_counter):
+    try:
+        age = calculate_age(bdate, current_year)
+        age_ranges = {
+            (0, 14): 'less_14',
+            (14, 19): '14_18',
+            (19, 25): '18_24',
+            (25, 35): '25_34',
+            (35, 45): '35_44',
+            (45, float('inf')): '45_54'
+        }
+        for (lower, upper), key in age_ranges.items():
+            if lower <= age < upper:
+                age_counter[key] += 1
+                break
+    except ValueError:
+        pass  # Invalid date format
 
 def calculate_age(bdate: str, current_year: int) -> int:
     day, month, year = map(int, bdate.split('.'))
     return current_year - year
 
 
+# Основные функции
 def statistics(friends_data) -> tuple:
     current_year = datetime.now().year
     country_counter = Counter()
@@ -34,22 +52,7 @@ def statistics(friends_data) -> tuple:
 
         bdate = friend.get('bdate', None)
         if bdate:
-            try:
-                age = calculate_age(bdate, current_year)
-                if age < 14:
-                    age_counter['less_14'] += 1
-                elif age < 19:
-                    age_counter['14_18'] += 1
-                elif age < 25:
-                    age_counter['18_24'] += 1
-                elif age < 35:
-                    age_counter['25_34'] += 1
-                elif age < 45:
-                    age_counter['35_44'] += 1
-                else:
-                    age_counter['45_54'] += 1
-            except ValueError:
-                pass  # Invalid date format
+            process_age(bdate, current_year, age_counter)
 
     def total_count(counter):
         return sum(counter.values())
